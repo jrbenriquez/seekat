@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'authentication',
     'django_countries',
     'mptt',
-    'se_core.apps.SeCoreConfig'
+    'tailwind',
+    'se_core.apps.SeCoreConfig',
+    'frontend_alpha.apps.FrontendAlphaConfig',
+    'theme.apps.ThemeConfig'
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,5 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'authentication.User'
 DEFAULT_AUTHENTICATION_CLASSES = ['authentication.utils.token.ExpiringTokenAuthentication']
 REST_FRAMEWORK_TOKEN_SECONDS_EXPIRY = 3600
+
+TAILWIND_APP_NAME = 'theme'

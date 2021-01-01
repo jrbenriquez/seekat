@@ -5,7 +5,7 @@ from se_core.models.constants import NAME_MAX_LENGTH
 
 class Seekat(TimeStampedMixIn):
     name = models.CharField(max_length=NAME_MAX_LENGTH)
-    address = models.ForeignKey('se_core.SeekAddress', related_name='seekats', on_delete=models.SET_NULL, null=True, blank=True)
+    address = models.ForeignKey('se_core.SeekatAddress', related_name='seekats', on_delete=models.SET_NULL, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
 
