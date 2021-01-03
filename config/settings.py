@@ -26,7 +26,7 @@ SECRET_KEY = 'bg_y1l4(m80^&xmzmsbbvvj&h9ff1efk(v3u3cr=xow)h8hjy7'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = 'frontend_alpha:login'
 
 # Application definition
 

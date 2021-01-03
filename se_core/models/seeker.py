@@ -3,8 +3,7 @@ from django.db import models
 from se_core.models.mixins import TimeStampedMixIn
 from se_core.models.constants import NAME_MAX_LENGTH
 
-# Create your models here.
-
+# TODO Follower Relations https://stackoverflow.com/questions/58794639/how-to-make-follower-following-system-with-django-model
 
 class Seeker(TimeStampedMixIn):
     user = models.OneToOneField('authentication.User', related_name='seeker', on_delete=models.CASCADE)
