@@ -26,9 +26,17 @@
                 {% endif %}
              </div>
 
-            <form method="post" class="mt-8" x-data="{first_name: {{form.first_name.value}}, last_name: {{form.last_name.value}}}">
+            <form method="post" class="mt-8" x-data="{first_name: {{form.first_name.value}}, last_name: {{form.last_name.value}}}, public_name: {{form.public_name.value}}">
               {% csrf_token %}
               <div class="mx-auto max-w-lg ">
+                <div class="py-1">
+                  <span class="px-1 text-sm text-gray-600">Public Seek Name</span>
+
+                  <input id="public_name" placeholder="" name="public_name" type="text"
+                         class="text-md block px-3 py-2 rounded-lg w-full
+                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  <label class="text-xs" for="public_name">This is what's shown to the Public along with your username. First and Last name are not always visible to the public</label>
+                </div>
                 <div class="py-1">
                   <span class="px-1 text-sm text-gray-600">First Name</span>
                   <input placeholder="" name="first_name" type="text"

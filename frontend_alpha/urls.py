@@ -10,10 +10,11 @@ from frontend_alpha.views import SignUpDetailsView
 app_name = 'frontend_alpha'
 
 urlpatterns = [
-    path('profile/<int:seeker_id>/', ProfileView.as_view(), name="profile"),
-    path('profile/<str:seeker_id>/', ProfileView.as_view(), name="profile"),
-    path('logout/', LogoutView.as_view(), name="logout"),
+    path('', LoginView.as_view(), name="home"),
     path('login/', LoginView.as_view(), name="login"),
+    path('logout/', LogoutView.as_view(), name="logout"),
     path('signup/', SignUpView.as_view(), name="signup"),
     path('signup-details/', SignUpDetailsView.as_view(), name="signup-details"),
+    path('profile/<int:seeker_id>/', ProfileView.as_view(), name="profile"),
+    path('profile/<str:seeker_id>/', ProfileView.as_view(), name="profile"),
 ]

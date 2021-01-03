@@ -1,12 +1,15 @@
 from django.db import models
+from mptt.models import MPTTModel, TreeForeignKey
+
 from se_core.models.mixins import TimeStampedMixIn
 from se_core.models.constants import NAME_MAX_LENGTH
 
 
-class Seekat(TimeStampedMixIn):
+class Seekat(TimeStampedMixIn, MPTTModel):
     name = models.CharField(max_length=NAME_MAX_LENGTH)
     address = models.ForeignKey('se_core.SeekatAddress', related_name='seekats', on_delete=models.SET_NULL, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
 
 class SeekatUser(TimeStampedMixIn):
@@ -15,5 +18,6 @@ class SeekatUser(TimeStampedMixIn):
 
 class SeekatGroup(TimeStampedMixIn):
     """ SeekatGroups are a group of users that solely represent a Seekat"""
+    verified = models.BooleanField(default=False)
     members = models.ManyToManyField('se_core.SeekatUser', related_name='seekat_groups')
 

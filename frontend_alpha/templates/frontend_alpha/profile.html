@@ -68,8 +68,8 @@
            alt="Profile picture"/>
       <div class="text-center absolute w-full" style="bottom: -30px">
         <div class="mb-10">
-          <p class="text-white tracking-wide uppercase text-lg font-bold">{{seeker.first_name}} {{seeker.last_name}}</p>
-          <p class="text-gray-400 text-sm">@{{seeker.username}}</p>
+          <p class="text-white tracking-wide uppercase text-lg font-bold">@{{seeker.username}}</p>
+          <p class="text-gray-400 text-sm">{{seeker.public_name}}</p>
         </div>
         {% if request.user != seeker.user %}
         <button onclick="window.location.href='{% url 'frontend:signup' %}'"

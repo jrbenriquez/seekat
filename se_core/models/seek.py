@@ -8,5 +8,6 @@ class Seek(TimeStampedMixIn):
     seekat = models.ForeignKey('se_core.Seekat', related_name='seeks', on_delete=models.CASCADE)
     upvote_count = models.IntegerField(default=0)
     downvote_count = models.IntegerField(default=0)
+    hashtags = models.ManyToManyField('se_core.HashTag', related_name="seeks")
 
 
