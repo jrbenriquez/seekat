@@ -6,6 +6,9 @@ from frontend_alpha.views import LogoutView
 from frontend_alpha.views import ProfileView
 from frontend_alpha.views import SignUpView
 from frontend_alpha.views import SignUpDetailsView
+from frontend_alpha.views import SignUpDetailsView
+from frontend_alpha.views import NewSeekView
+from frontend_alpha.views import AdditionalSeekDetails
 
 app_name = 'frontend_alpha'
 
@@ -17,4 +20,7 @@ urlpatterns = [
     path('signup-details/', SignUpDetailsView.as_view(), name="signup-details"),
     path('profile/<int:seeker_id>/', ProfileView.as_view(), name="profile"),
     path('profile/<str:seeker_id>/', ProfileView.as_view(), name="profile"),
+    # Seek
+    path('seek/new/', NewSeekView.as_view(), name='new-seek'),
+    path('seek/additional-details/', AdditionalSeekDetails.as_view(), name='additional-details'),
 ]

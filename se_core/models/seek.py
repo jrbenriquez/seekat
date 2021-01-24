@@ -10,4 +10,7 @@ class Seek(TimeStampedMixIn):
     downvote_count = models.IntegerField(default=0)
     hashtags = models.ManyToManyField('se_core.HashTag', related_name="seeks")
 
+    @property
+    def vote_count(self):
+        return self.upvote_count - self.downvote_count
 

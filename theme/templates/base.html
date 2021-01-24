@@ -12,6 +12,8 @@
 		<meta name="author" content="">
 
 		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% block head_script %}
+        {% endblock %}
 	</head>
 
 	<body class="bg-grey-lightest font-serif leading-normal tracking-normal">
@@ -25,6 +27,8 @@
 	-->
 	{% block body %}
 	{% endblock %}
+    {% block body_script %}
+    {% endblock %}
 	</body>
 
 </html>
