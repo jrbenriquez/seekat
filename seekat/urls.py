@@ -21,5 +21,6 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('frontend_alpha.urls', namespace='frontend')),
     path('admin/', admin.site.urls),
+    path('api/', include('se_api.urls')),
     path('auth/', include('authentication.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

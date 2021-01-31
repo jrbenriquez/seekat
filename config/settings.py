@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mptt',
     'tailwind',
     'se_core.apps.SeCoreConfig',
+    'se_api.apps.SeApiConfig',
     'frontend_alpha.apps.FrontendAlphaConfig',
     'theme.apps.ThemeConfig'
 ]
@@ -132,3 +133,8 @@ DEFAULT_AUTHENTICATION_CLASSES = ['authentication.utils.token.ExpiringTokenAuthe
 REST_FRAMEWORK_TOKEN_SECONDS_EXPIRY = 3600
 
 TAILWIND_APP_NAME = 'theme'
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ]
+}
